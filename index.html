@@ -1,3 +1,462 @@
-meu blog tech
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroForte - Dashboard Sustentável</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
 
-vou compartilhar mais sobre meus projetos
+    <header class="navbar">
+        <div class="logo">Agro<span>Forte</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#ferramentas">Painel do Produtor</a></li>
+                <li><a href="#calculadora">Simulador Ecológico</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="tag-topo fade-in">Tecnologia & Campo</span>
+            <h1 class="fade-in">Agro Forte, <br><em>Futuro Sustentável</em></h1>
+            <p class="fade-in-delay">O equilíbrio perfeito para o produtor rural. Aumente seus lucros, otimize seus recursos e transforme sua fazenda em uma potência sustentável certificada.</p>
+            <div class="botoes-hero fade-in-delay">
+                <a href="#ferramentas" class="btn-principal">Entrar na Central do Produtor</a>
+                <a href="#calculadora" class="btn-secundario">Simular Crédito de Carbono</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="ferramentas" class="secao-ferramentas">
+        <div class="titulo-secao subida-scroll">
+            <span class="subtitulo">Apoio Operacional</span>
+            <h2>Como Ajudamos o Seu Negócio</h2>
+            <p>Selecione uma das frentes abaixo para acessar dados de manejo inteligente e proteção de safra.</p>
+        </div>
+
+        <div class="abas-container subida-scroll">
+            <div class="botoes-abas">
+                <button class="btn-aba ativo" data-alvo="manejo">🌱 Guia de Bioinsumos</button>
+                <button class="btn-aba" data-alvo="agua">💧 Alerta de Irrigação</button>
+                <button class="btn-aba" data-alvo="mercado">📈 Mercado Verde</button>
+            </div>
+            
+            <div class="conteudo-abas">
+                <div id="manejo" class="aba-item ativo">
+                    <h3>Substituição Inteligente por Bioinsumos</h3>
+                    <p>Reduza a dependência de fertilizantes químicos caros. Produtores parceiros utilizam fixadores biológicos de nitrogênio (bactérias benéficas como o <em>Azospirillum</em>), gerando uma economia de até <strong>30% no custo por hectare</strong> e preservando os lençóis freáticos.</p>
+                </div>
+                <div id="agua" class="aba-item">
+                    <h3>Monitoramento e Economia Hídrica</h3>
+                    <p>Evite o estresse hídrico da planta e o desperdício de energia dos pivôs centralizados. Utilizando sensores de umidade de solo interconectados, a recomendação atual para sua região indica irrigação fracionada nas primeiras horas da manhã, reduzindo o consumo elétrico em até **22%**.</p>
+                </div>
+                <div id="mercado" class="aba-item">
+                    <h3>Valorização e Rastreabilidade da Safra</h3>
+                    <p>O mercado global paga bônus por grãos rastreáveis. Ao preencher o CAR (Cadastro Ambiental Rural) e monitorar áreas de APP via satélite, seu produto ganha o selo internacional de conformidade, permitindo a venda direta com prêmios de preço em grandes tradings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="secao-calculadora">
+        <div class="grid-calculadora">
+            <div class="texto-calc subida-scroll">
+                <span class="subtitulo">Ferramenta Interativa</span>
+                <h2>Simulador de Lucro Ecológico</h2>
+                <p>Descubra o potencial financeiro escondido na sua fazenda. Insira abaixo o tamanho da sua área produtiva planejada para práticas sustentáveis e veja uma estimativa em tempo real de economia e ganhos com créditos de carbono.</p>
+                
+                <div class="formulario-calc">
+                    <label for="hectares">Tamanho da sua área (Hectares):</label>
+                    <input type="number" id="hectares" placeholder="Ex: 150" min="1">
+                    <button id="btn-calcular" class="btn-principal">Calcular Retorno</button>
+                </div>
+            </div>
+
+            <div class="resultado-calc subida-scroll">
+                <h3>Estimativa de Retorno Anual</h3>
+                <div class="cards-resultado">
+                    <div class="res-card">
+                        <h5>Economia em Insumos</h5>
+                        <p id="txt-economia">R$ 0,00</p>
+                    </div>
+                    <div class="res-card">
+                        <h5>Ganhos com Carbono</h5>
+                        <p id="txt-carbono">R$ 0,00</p>
+                    </div>
+                    <div class="res-card total">
+                        <h5>Benefício Financeiro Total</h5>
+                        <p id="txt-total">R$ 0,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AgroForte. Ferramentas digitais de fomento à produtividade limpa e de alta performance.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+ /* CONFIGURAÇÃO DO MODO ESCURO E CORES DA NATUREZA */
+:root {
+    --fundo-escuro: #070f09;       /* Verde floresta profundo */
+    --fundo-card: #0f1e13;         /* Verde escuro para os blocos */
+    --verde-neon: #2ebd40;         /* Destaque sustentável vibrante */
+    --verde-claro: #ccff33;        /* Luz natural */
+    --tom-ouro: #d4a373;           /* Elemento terra/colheita */
+    --texto-principal: #f8f9fa;    /* Branco confortável */
+    --texto-mutado: #9bb1a2;       /* Cinza esverdeado */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--texto-principal);
+    background-color: var(--fundo-escuro);
+    overflow-x: hidden;
+}
+
+/* FONTES */
+h1, h2, h3, h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--texto-mutado);
+}
+
+.subtitulo {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--verde-claro);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(7, 15, 9, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.logo span { color: var(--verde-claro); }
+
+.navbar ul { display: flex; list-style: none; }
+
+.navbar ul li { margin-left: 30px; }
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover { color: white; }
+
+/* TELA INICIAL (HERO) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(7,15,9,0.7), var(--fundo-escuro)),
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.tag-topo {
+    padding: 5px 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    color: var(--verde-claro);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.hero-content h1 { font-size: 4.2rem; margin-bottom: 25px; color: white; }
+.hero-content h1 em { color: var(--verde-claro); font-style: italic; }
+.hero-content p { max-width: 750px; margin: 0 auto 40px auto; font-size: 1.2rem; }
+
+.botoes-hero { display: flex; justify-content: center; gap: 20px; }
+
+.btn-principal, .btn-secundario {
+    padding: 15px 35px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-principal {
+    background-color: var(--verde-neon);
+    color: var(--fundo-escuro);
+    border: none;
+}
+
+.btn-principal:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-3px);
+}
+
+.btn-secundario {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-secundario:hover { background: rgba(255,255,255,0.05); border-color: white; }
+
+/* CENTRAL DE ABAS DE AJUDA */
+.secao-ferramentas { padding: 120px 8%; background-color: var(--fundo-escuro); }
+.titulo-secao { text-align: center; margin-bottom: 50px; }
+.titulo-secao h2 { font-size: 2.8rem; margin-bottom: 15px; color: white; }
+
+.abas-container { max-width: 900px; margin: 0 auto; }
+.botoes-abas { display: flex; justify-content: center; gap: 15px; margin-bottom: 35px; }
+
+.btn-aba {
+    padding: 12px 25px;
+    background-color: var(--fundo-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: var(--texto-mutado);
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-aba.ativo, .btn-aba:hover {
+    background-color: var(--verde-neon);
+    color: var(--fundo-escuro);
+}
+
+.conteudo-abas {
+    background-color: var(--fundo-card);
+    padding: 40px;
+    border-radius: 6px;
+    border-left: 4px solid var(--tom-ouro);
+}
+
+.aba-item { display: none; animation: fadeInEffect 0.5s ease forwards; }
+.aba-item.ativo { display: block; }
+.aba-item h3 { margin-bottom: 15px; color: white; font-size: 1.7rem; }
+
+/* CALCULADORA / SIMULADOR */
+.secao-calculadora {
+    padding: 120px 8%;
+    background: linear-gradient(180deg, var(--fundo-escuro) 0%, #040905 100%);
+    border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.grid-calculadora {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media(max-width: 850px) { .grid-calculadora { grid-template-columns: 1fr; } }
+
+.texto-calc h2 { font-size: 2.8rem; margin-bottom: 20px; color: white; }
+
+.formulario-calc {
+    margin-top: 30px;
+    background-color: var(--fundo-card);
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.formulario-calc label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--texto-principal);
+}
+
+.formulario-calc input {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.resultado-calc {
+    background-color: var(--fundo-card);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(56, 189, 64, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.resultado-calc h3 { font-size: 1.8rem; margin-bottom: 25px; text-align: center; color: white;}
+
+.cards-resultado { display: flex; flex-direction: column; gap: 15px; }
+
+.res-card {
+    padding: 15px 20px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.res-card h5 { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--texto-mutado); }
+.res-card p { margin-bottom: 0; font-size: 1.1rem; font-weight: 700; color: white; }
+
+.res-card.total {
+    background-color: rgba(46, 189, 64, 0.1);
+    border: 1px dashed var(--verde-neon);
+}
+.res-card.total p { color: var(--verde-claro); font-size: 1.3rem; }
+
+/* FOOTER */
+footer {
+    background-color: #030604;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.85rem;
+    color: var(--texto-mutado);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ANIMAÇÕES */
+.fade-in { opacity: 0; animation: subidaFade 1s ease forwards; }
+.fade-in-delay { opacity: 0; animation: subidaFade 1s ease 0.3s forwards; }
+
+@keyframes subidaFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInEffect {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.subida-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.subida-scroll.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}   
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- GERENCIADOR DE ABAS ---
+    const botoesAba = document.querySelectorAll(".btn-aba");
+    const itensAba = document.querySelectorAll(".aba-item");
+
+    botoesAba.forEach(botao => {
+        botao.addEventListener("click", () => {
+            botoesAba.forEach(b => b.classList.remove("ativo"));
+            itensAba.forEach(item => item.classList.remove("ativo"));
+
+            botao.classList.add("ativo");
+            const alvoId = botao.getAttribute("data-alvo");
+            document.getElementById(alvoId).classList.add("ativo");
+        });
+    });
+
+    // --- ANIMAÇÃO DE ROLAGEM DE PÁGINA (SCROLL) ---
+    const elementosScroll = document.querySelectorAll(".subida-scroll");
+
+    const checarScroll = () => {
+        const gatilho = (window.innerHeight / 5) * 4;
+        elementosScroll.forEach(elemento => {
+            const topo = elemento.getBoundingClientRect().top;
+            if (topo < gatilho) {
+                elemento.classList.add("visivel");
+            }
+        });
+    };
+    checarScroll();
+    window.addEventListener("scroll", checarScroll);
+
+    // --- FERRAMENTA DA CALCULADORA: CÁLCULOS DO PRODUTOR ---
+    const btnCalcular = document.getElementById("btn-calcular");
+    const inputHectares = document.getElementById("hectares");
+
+    const txtEconomia = document.getElementById("txt-economia");
+    const txtCarbono = document.getElementById("txt-carbono");
+    const txtTotal = document.getElementById("txt-total");
+
+    btnCalcular.addEventListener("click", () => {
+        const hectares = parseFloat(inputHectares.value);
+
+        if (isNaN(hectares) || hectares <= 0) {
+            alert("Por favor, insira uma quantidade válida de hectares.");
+            return;
+        }
+
+        // Fórmulas baseadas em médias reais de mercado sustentável:
+        // 1. Economia média estimada de R$ 250,00 por hectare com manejo biológico
+        const economia = hectares * 250; 
+        // 2. Crédito de carbono gerando cerca de 2 toneladas de CO2 retidas por hectare (avaliadas a R$ 85,00 cada)
+        const carbono = hectares * 2 * 85;
+        const total = economia + carbono;
+
+        // Formatação para Moeda Brasileira (R$) com transição suave
+        txtEconomia.textContent = economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        txtCarbono.textContent = carbono.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        txtTotal.textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    });
+});
+</script>
+<button>
+    👍🏼
+</button>
+<button>
+   👎🏼 
+</button>
